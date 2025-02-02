@@ -118,7 +118,7 @@ void Group::SetMaxPriorities(Lesson& lesson) //better Fix(or not)
     for (int i = 0; i < 5; ++i)
     {
         bool isLessonInDay = false;
-        for (int j = 0; j < 7; ++j)
+        for (int j = 0; j < 8; ++j)
         {
             if (this->realSchedule[i][j] == lesson)
             {
@@ -147,7 +147,7 @@ void Group::SetMaxPriorities(Lesson& lesson) //better Fix(or not)
 
 
     //close all windows possible
-    for (int i = 0; i < 8; ++i)
+    for (int i = 0; i < 5; ++i)
     {
         bool isFound = false;
         for (int j = 7; j >= 0; --j)
@@ -181,7 +181,7 @@ void Group::SetMaxPriorities(Lesson& lesson) //better Fix(or not)
 
     int minLessonsInDay = amountOfLessonsInDay[0];
     int indOfMinLessons = 0;
-    for (int i = 0; i < 5; ++i)
+    for (int i = 0; i < 8; ++i)
     {
         if (minLessonsInDay > amountOfLessonsInDay[i])
         {
@@ -245,4 +245,9 @@ void Group::Result()
     }
     //if (this->lessons.size() != 0)
         //Fix ASAP
+}
+
+vector<vector<Lesson>> Group::GetRealSchedule()
+{
+    return this->realSchedule;
 }

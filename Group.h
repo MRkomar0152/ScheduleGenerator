@@ -4,6 +4,7 @@
 #include <ctime>
 #include "Teacher.h"
 #include "Lesson.h"
+#include <vector>
 
 class Group
 {
@@ -49,6 +50,8 @@ public:
     Lesson GetRandomLesson();
 
     void Result();
+
+    vector<vector<Lesson>> GetRealSchedule();
 };
 
 #endif // !GROUP_HEADER
